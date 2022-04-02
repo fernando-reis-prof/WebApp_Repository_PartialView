@@ -1,0 +1,20 @@
+﻿@model WebApplication1.Models.Post
+@{
+    var blog = new WebApplication1.Models.Blog();
+
+    if (Model.Blog != null)
+    {
+        blog = Model.Blog;
+    }
+}
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">Id</dt>
+        <dd class = "col-sm-10">@blog.Id</dd>
+
+        <dt class = "col-sm-2">URL</dt>
+        <dd class = "col-sm-10">@blog.Url</dd>
+    </dl>
+</div>

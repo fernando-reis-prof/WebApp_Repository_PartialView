@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Models.Blog
+@{
+    var lista = new List<WebApplication1.Models.Post>();
+
+    if (Model.Posts != null)
+    {
+        lista = Model.Posts.ToList();
+    }
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <!--<th></th>-->
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in lista) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
